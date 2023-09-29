@@ -35,14 +35,18 @@ fetch(url)
 const displayData =forecast=>{
     const {location,timelines} = forecast
     console.log(timelines)
-    const eachDay = timelines.daily.map((day)=>day)
+    const eachDay = timelines.daily.map((day)=>day.values)
     console.log(eachDay)
+    const values = eachDay.map((value) => value)
+    console.log(values)
     const town = document.getElementById('city_name');
     const humidity = document.getElementById('humidity');
     const temperature = document.getElementById('temperature');
-    town.innerHTML=location.name;
-    humidity.innerHTML=timelines.daily.values.humidityAvg;
-    temperature.innerHTML=timelines.daily.values.temperatureAvg;
+    const onlyCityName = location.name.split(',')
+    console.log(onlyCityName)
+    town.innerHTML=onlyCityName[0];
+    humidity.innerHTML=values[0].humidityAvg;
+    temperature.innerHTML=values[0].temperatureAvg;
     // console.log(city);
 
 }

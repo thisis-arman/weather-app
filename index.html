@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/c76170a420.js" crossorigin="anonymous"></script>
     <title>Weather App</title>
 </head>
 
@@ -23,9 +25,15 @@
                 Search Weather
             </button>
             <div>
-                <h1 id='city_name'>Town</h1>
-                <h1 id='humidity'>humidity</h1>
-                <h1 id='temperature'>temperature</h1>
+                <span><i class="fa-solid fa-location-dot"></i> Town:
+                    <h1 id='city_name'>Town</h1>
+                </span>
+                <span><i class="fa-solid fa-cloud"></i> Humidity:
+                    <h1 id='humidity'>humidity</h1>
+                </span>
+                <span><i class="fa-solid fa-temperature-low"></i> Temperature:
+                    <h1 id='temperature'>temperature</h1>
+                </span>
             </div>
         </div>
 

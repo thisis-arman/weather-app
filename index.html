@@ -16,14 +16,16 @@
     <main class='container'>
         <h1 class='title'>Weather App</h1>
         <div class="form_area">
-            <input class="location_field" type="text" placeholder="e.g: Dhaka">
+            <input class="location_field" id="weather-field" type="text" placeholder="e.g: Dhaka">
             <br />
 
-            <button class='get_weather_btn'>
+            <button id='weather-btn' class="get_weather_btn">
                 Search Weather
             </button>
             <div>
-                <h2 id='city_name'>{city Name}</h2>
+                <h1 id='city_name'>Town</h1>
+                <h1 id='humidity'>humidity</h1>
+                <h1 id='temperature'>temperature</h1>
             </div>
         </div>
 
@@ -36,6 +38,6 @@
 
 
 
-<script src="/script.js"></script>
+<script src="./script.js"></script>
 
 </html>

@@ -4,7 +4,8 @@ if ("geolocation" in navigator) {
   navigator.geolocation.getCurrentPosition(function(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    console.log(latitude, longitude)
+   reverseGeocode(latitude, longitude)
+    
     
 
   }, function(error) {
@@ -13,13 +14,32 @@ if ("geolocation" in navigator) {
   });
 }
 
+function reverseGeocode(latitude, longitude) {
+  const apiUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const locationName = data.display_name;
+      fetchAPI(locationName);
+    })
+    .catch(error => {
+      console.error("Error fetching location data:", error);
+    });
+}
+
 document.getElementById('weather-btn').addEventListener('click',function(){
     const input_field = document.getElementById("weather-field");
     const location = input_field.value
-    console.log(location);
+    fetchAPI(location);
     console.log("weather")
 
-    // Define the URL from which you want to fetch data
+  
+
+})
+
+const fetchAPI =(location)=>{
+      // Define the URL from which you want to fetch data
 const url = `https://api.tomorrow.io/v4/weather/forecast?location=${location}&apikey=3pCvq79Ak9lVZ7PwHZeVT5MxTkGXTYgh`;
 
 // Use the fetch function to make an HTTP GET request
@@ -42,8 +62,8 @@ fetch(url)
     console.error('Fetch error:', error);
   });
 
-
-})
+    
+}
 
 const displayData =forecast=>{
     const {location,timelines} = forecast

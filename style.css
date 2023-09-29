@@ -73,3 +73,10 @@ background: rgba(35, 35, 153, 0.878);
     
     border-radius:10px;
 }
+.form_area{
+    /* border: 2px solid white; */
+    border-radius: 8px;
+    background: #f8e1e13a;
+    padding: 50px 1px;
+    margin-top: 10px;
+}

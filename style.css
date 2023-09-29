@@ -15,14 +15,24 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    min-width: 100vh;
+    background-image: url('https://img.freepik.com/free-photo/silhouettes-hills-street-lamps-cloudy-sky-during-beautiful-sunset_181624-28611.jpg?w=900&t=st=1695997385~exp=1695997985~hmac=a078682ec9f84a6198bc16fb86e09f29e31ca6cc9c7e01cb23174b3b0a85dcb5');
+    background-position: center;
+    background-size: cover;
+    /* background-blend-mode: lighten; */
     /* background: radial-gradient(#010e18, #151b52); */
-    background: radial-gradient(ellipse at top, black, transparent),
-            radial-gradient(ellipse at bottom, gray, transparent);
+  /*   background: radial-gradient(ellipse at top, black, transparent),
+            radial-gradient(ellipse at bottom, gray, transparent); */
     background-repeat: no-repeat;
 }
 
 h1{
     color: white;
+}
+
+.errorMessage{
+    color: red;
+
 }
 .container{
     width: 80%;

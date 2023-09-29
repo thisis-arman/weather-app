@@ -1,6 +1,17 @@
 
 console.log('from script file')
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    console.log(latitude, longitude)
+    
 
+  }, function(error) {
+    
+    console.error("Error getting location:", error);
+  });
+}
 
 document.getElementById('weather-btn').addEventListener('click',function(){
     const input_field = document.getElementById("weather-field");
@@ -16,6 +27,8 @@ fetch(url)
   .then(response => {
     // Check if the response status code indicates success (usually in the range of 200-299)
     if (!response.ok) {
+        const errorMessage = document.getElementById('errorMessage');
+        errorMessage.innerHTML= 'Something went wrong . Make sure you entered a valid location'
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     return response.json();
